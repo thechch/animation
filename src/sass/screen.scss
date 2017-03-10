@@ -93,9 +93,9 @@ button:hover {
 
 .aniheader,
 .anibutton,
-.aniglass {
+.aniglass,
+.anistar {
   height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,9 +110,9 @@ button:hover {
   background-size: 200% 200%;
   border: 1px solid grey;
   transform: perspective(20px) rotateX(-2deg);
-  animation: blink 4s 4s infinite;
+  animation: fill-in 4s 4s infinite;
 }
-@keyframes blink {
+@keyframes fill-in {
   0%, 50% {
     background-position: 0 0%;
   }
@@ -122,4 +122,16 @@ button:hover {
   100% {
     background-position: 0 0%;
   }
+}
+
+/*Twitter star animation*/
+.fave {
+  width: 65px;
+  height: 50px;
+  background: url(../../img/twitter_fave.png) no-repeat;
+  background-position: 0 0;
+}
+.fave:hover {
+  background-position: -3519px 0;
+  transition: background 1s steps(55);
 }
