@@ -77,7 +77,7 @@ button {
   padding: 1em 1em;
   background-image: linear-gradient(bottom, cornflowerblue 0%, cornflowerblue 100%);
   transition-property: all;
-  transition-duration: 2s;
+  transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
   text-transform: uppercase;
 }
@@ -85,10 +85,11 @@ button {
 button:hover {
   background: blueviolet;
   font-size: 3em;
-  border-radius: 1px;
-  width: 7em;
-  height: 4em;
-  transform: rotate(1440deg);
+  border-radius: 3em;
+  font-size: 0.01em;
+  width: 3em;
+  height: 3em;
+  transform: rotate(720deg);
 }
 
 .aniheader,
@@ -133,5 +134,5 @@ button:hover {
 }
 .fave:hover {
   background-position: -3519px 0;
-  transition: background 1s steps(55);
+  transition: background 1s steps(55, end);
 }
