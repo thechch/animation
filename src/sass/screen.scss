@@ -10,7 +10,7 @@ button {
 }
 
 body {
-  background: #36a1d9;
+  margin: 0 auto;
 }
 
 h1 {
@@ -65,74 +65,108 @@ h1:hover {
   }
 }
 
-button {
-  background: cornflowerblue;
-  border-radius: 5em;
-  width: 10em;
-  height: 10em;
-  border: 3px solid blueviolet;
-  color: white;
-  cursor: pointer;
-  font-size: 2em;
-  padding: 1em 1em;
-  background-image: linear-gradient(bottom, cornflowerblue 0%, cornflowerblue 100%);
-  transition-property: all;
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  text-transform: uppercase;
-}
-
-button:hover {
-  background: blueviolet;
-  font-size: 3em;
-  border-radius: 3em;
-  font-size: 0.01em;
-  width: 3em;
-  height: 3em;
-  transform: rotate(720deg);
-}
-
 .aniheader,
 .anibutton,
 .aniglass,
-.anistar {
+.anistar,
+.anirhombus {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #36a1d9;
 }
 
-.glass {
-  width: 200px;
-  height: 200px;
-  background: #000;
-  background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
-  background-position: 0 -100%;
-  background-size: 200% 200%;
-  border: 1px solid grey;
-  transform: perspective(20px) rotateX(-2deg);
-  animation: fill-in 4s 4s infinite;
-}
-@keyframes fill-in {
-  0%, 50% {
-    background-position: 0 0%;
+.anibutton {
+  background-color: #2ecc71;
+
+  button {
+    background: #AAAAAA;
+    border-radius: 5em;
+    width: 10em;
+    height: 10em;
+    border: 3px solid #AAAAAA;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1em 1em;
+    background-image: linear-gradient(bottom, #AAAAAA 0%, #AAAAAA 100%);
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    text-transform: uppercase;
   }
-  85%, 95% {
-    background-position: 0 100%;
-  }
-  100% {
-    background-position: 0 0%;
+
+  button:hover {
+    font-size: 3em;
+    border-radius: 3em;
+    font-size: 0.01em;
+    width: 3em;
+    height: 3em;
+    transform: rotate(720deg);
   }
 }
 
-/*Twitter star animation*/
-.fave {
-  width: 65px;
-  height: 50px;
-  background: url(../../img/twitter_fave.png) no-repeat;
-  background-position: 0 0;
+.aniglass {
+  .glass {
+    width: 200px;
+    height: 200px;
+    background: #000;
+    background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
+    background-position: 0 -100%;
+    background-size: 200% 200%;
+    border: 1px solid grey;
+    transform: perspective(20px) rotateX(-2deg);
+    animation: fill-in 4s 4s infinite;
+  }
+  @keyframes fill-in {
+    0%,
+    50% {
+      background-position: 0 0%;
+    }
+    85%,
+    95% {
+      background-position: 0 100%;
+    }
+    100% {
+      background-position: 0 0%;
+    }
+  }
 }
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55, end);
+
+.anistar {
+  background-color: white;
+  .fave {
+    width: 65px;
+    height: 50px;
+    background: url(../../img/twitter_fave.png) no-repeat;
+    background-position: 0 0;
+  }
+  .fave:hover {
+    background-position: -3519px 0;
+    transition: background 1s steps(55, end);
+  }
+}
+
+.anirhombus {
+  background: #0bbea0;
+
+  .rhombus {
+    transition-property: all;
+    transition-duration: 0.75s;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(.77, -0.7, .24, 1.64);
+    background: white;
+    border-radius: 2px;
+    color: #222;
+    font-size: 24px;
+    font: Helvetica, Arial, Sans-serif;
+    height: 6em;
+    width: 6em;
+    transform: rotateZ(45deg);
+    &:hover {
+      border-radius: 50%;
+      transform: scale(2);
+    }
+  }
 }
