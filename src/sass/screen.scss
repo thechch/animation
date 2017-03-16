@@ -79,30 +79,17 @@ h1:hover {
 }
 
 .anibutton {
-  background-color: #2ecc71;
-  button {
-    background: #AAAAAA;
-    border-radius: 5em;
-    width: 10em;
-    height: 10em;
-    border: 3px solid #AAAAAA;
-    color: white;
-    cursor: pointer;
-    font-size: 2em;
-    padding: 1em 1em;
-    background-image: linear-gradient(bottom, #AAAAAA 0%, #AAAAAA 100%);
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    text-transform: uppercase;
-  }
-  button:hover {
-    font-size: 3em;
-    border-radius: 3em;
-    font-size: 0.01em;
-    width: 3em;
-    height: 3em;
-    transform: rotate(720deg);
+  animation: change-background 6s linear infinite alternate;
+  @keyframes change-background {
+    0% {
+      background: #2ecc71;
+    }
+    50% {
+      background: #ffa000;
+    }
+    100% {
+      background: #4527a0;
+    }
   }
 }
 
