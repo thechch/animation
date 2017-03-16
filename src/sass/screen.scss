@@ -171,11 +171,18 @@ h1:hover {
 
 .anitrollface {
   background: #fff;
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+  }
   h2:first-child {
     transform: translateY(-5em);
+    transition: all 1s ease-out 0.4s;
   }
   h2:last-child {
     transform: translateY(5em);
+    transition: all 1s ease-out 1s;
   }
   .face {
     display: flex;
@@ -188,7 +195,18 @@ h1:hover {
       width: 20em;
       height: 20em;
       transform: scaleX(-1);
-      transition: background 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: background 1s cubic-bezier(0.68, 1, 0.265, 1);
+    }
+    &:hover {
+      h2:first-child {
+        transform: none;
+      }
+      h2:last-child {
+        transform: none;
+      }
+      .face--pic {
+        background-position: 0 0;
+      }
     }
   }
 }
