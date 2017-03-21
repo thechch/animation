@@ -1,6 +1,6 @@
-//wiggle
 @keyframes wiggle {
-    0%, 10% {
+    0%,
+    10% {
         transform: rotateZ(none);
     }
     15% {
@@ -30,4 +30,62 @@
     100% {
         transform: rotateZ(none);
     }
+}
+
+@keyframes pulsate {
+    0%,
+    20% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(5px);
+    }
+    50%,
+    70% {
+        transform: translate(-50%, -50%) scale(1.5);
+        filter: none;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(5px);
+    }
+}
+
+@keyframes fill-in {
+    0%,
+    50% {
+        background-position: 0 0%;
+    }
+    85%,
+    95% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: 0 0%;
+    }
+}
+
+@keyframes change-background {
+    0% {
+        background: #2ecc71;
+    }
+    50% {
+        background: #ffa000;
+    }
+    100% {
+        background: #4527a0;
+    }
+}
+
+@keyframes scroll {
+  0%, 10% {
+    background-position: 0 0;
+  }
+  20%, 30% {
+    background-position: 0 -22em;
+  }
+  50%, 60% {
+    background-position: 0 -44em;
+  }
+  90%, 100% {
+    background-position: 0 0;
+  }
 }

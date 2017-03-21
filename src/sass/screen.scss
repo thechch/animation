@@ -38,29 +38,6 @@ h1:hover {
   color: #5cefaf;
 }
 
-
-/*** Keyframes - used with the "animation" property in the h1 ***/
-
-@keyframes pulsate {
-  0%,
-  20% {
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(5px);
-  }
-  50%,
-  70% {
-    transform: translate(-50%, -50%) scale(1.5);
-    filter: none;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(5px);
-  }
-}
-
-
-/*** Media queries for adjusting to different screen sizes ***/
-
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 2em;
@@ -73,7 +50,8 @@ h1:hover {
 .anistar,
 .anirhombus,
 .anitrollface,
-.anibutton {
+.anibutton,
+.aniscreen {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -83,17 +61,6 @@ h1:hover {
 
 .anibackground {
   animation: change-background 6s linear infinite alternate;
-  @keyframes change-background {
-    0% {
-      background: #2ecc71;
-    }
-    50% {
-      background: #ffa000;
-    }
-    100% {
-      background: #4527a0;
-    }
-  }
 }
 
 .aniglass {
@@ -107,19 +74,6 @@ h1:hover {
     border: 1px solid grey;
     transform: perspective(20px) rotateX(-2deg);
     animation: fill-in 4s 4s infinite;
-  }
-  @keyframes fill-in {
-    0%,
-    50% {
-      background-position: 0 0%;
-    }
-    85%,
-    95% {
-      background-position: 0 100%;
-    }
-    100% {
-      background-position: 0 0%;
-    }
   }
 }
 
@@ -203,24 +157,55 @@ h1:hover {
 
 .anibutton {
   background: linear-gradient(to top, #434343 0%, black 100%);
-
-  button { 
+  button {
     height: 4em;
     width: 7em;
-
     border: none;
     border-top: 3px solid orange;
     border-radius: 0 0 0.2em 0.2em;
-
     font-size: 1em;
     font-family: Helvetica, Arial, Sans-serif;
     color: #fff;
-
-    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
     background-blend-mode: luminosity;
-
     transform-origin: 50% -1em;
     animation: wiggle 2s linear infinite;
   }
 }
 
+.aniscreen {
+  .screen {
+    position: relative;
+    background: #e25865 url(//cssanimation.rocks/screen/images/screen_bg.png) no-repeat top center;
+    background-size: 100% auto;
+    border: 2em solid #fff;
+    border-radius: 1em;
+    width: 55em;
+    height: 30em;
+    animation: scroll 5s infinite cubic-bezier(0.55, -0.45, 0.68, 1.53);
+    &:hover {
+      animation-play-state: paused;
+      .message {
+        opacity: 1;
+      }
+    }
+    .message {
+      position: absolute;
+      text-align: center;
+      top: 4em;
+      right: 4em;
+      bottom: 4em;
+      left: 4em;
+      height: 8em;
+      line-height: 6.75em;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 0.5em;
+      color: #fff;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 2em;
+      opacity: 0;
+      transition: all 0.4s ease-out;
+      transform: translateY(0.5em);
+    }
+  }
+}
