@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('styles', function() {
-  gulp.src('./src/sass/**/*.scss')
+  gulp.src('./src/sass/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('build/css'))
