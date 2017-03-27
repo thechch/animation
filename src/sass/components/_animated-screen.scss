@@ -1,0 +1,54 @@
+.c-aniscreen__screen {
+    position: relative;
+    background: $color-tasty-red url(../../img/screen_bg.png) no-repeat top center;
+    background-size: 100% auto;
+    border: 2em solid $color-plain-white;
+    border-radius: 1em;
+    width: 55em;
+    height: 30em;
+    animation: c-aniscreen--scroll 5s infinite cubic-bezier(0.55, -0.45, 0.68, 1.53);
+    &:hover {
+        animation-play-state: paused;
+        .c-aniscreen__message {
+            opacity: 1;
+        }
+    }
+}
+
+.c-aniscreen__message {
+    position: absolute;
+    text-align: center;
+    top: 4em;
+    right: 4em;
+    bottom: 4em;
+    left: 4em;
+    height: 8em;
+    line-height: 6.75em;
+    background: $color-transparent-black;
+    border-radius: 0.5em;
+    color: $color-plain-white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    transform: translateY(0.5em);
+}
+
+@keyframes c-aniscreen--scroll {
+    0%,
+    10% {
+        background-position: 0 0;
+    }
+    20%,
+    30% {
+        background-position: 0 -22em;
+    }
+    50%,
+    60% {
+        background-position: 0 -44em;
+    }
+    90%,
+    100% {
+        background-position: 0 0;
+    }
+}

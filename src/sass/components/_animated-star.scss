@@ -1,0 +1,14 @@
+.c-anistar {
+    background-color: $color-plain-white;
+}
+
+.c-anistar__fave {
+    width: 65px;
+    height: 50px;
+    background: url(../../img/twitter_fave.png) no-repeat;
+    background-position: 0 0;
+    &:hover {
+        background-position: -3519px 0;
+        transition: background 1s steps(55, end);
+    }
+}

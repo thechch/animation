@@ -1,0 +1,15 @@
+.c-anibackground {
+      animation: c-anibackground--change 6s linear infinite alternate;
+}
+
+@keyframes c-anibackground--change {
+    0% {
+        background: $color-animation-green;
+    }
+    50% {
+        background: $color-animation-orange;
+    }
+    100% {
+        background: $color-animation-violet;
+    }
+}

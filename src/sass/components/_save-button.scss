@@ -1,0 +1,51 @@
+.c-save-button {
+    background: linear-gradient(to top, $color-medium-gray 0%, $color-plain-black 100%);
+}
+
+.c-save-button__button {
+    height: 4em;
+    width: 7em;
+    border: none;
+    border-top: 3px solid $color-plain-orange;
+    border-radius: 0 0 0.2em 0.2em;
+    font-size: 1em;
+    font-family: Helvetica, Arial, Sans-serif;
+    color: $color-plain-white;
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+    background-blend-mode: luminosity;
+    transform-origin: 50% -1em;
+    animation: c-save-button--wiggle 2s linear infinite;
+}
+@keyframes c-save-button--wiggle {
+    0%,
+    10% {
+        transform: rotateZ(none);
+    }
+    15% {
+        transform: rotateZ(-20deg);
+    }
+    20% {
+        transform: rotateZ(15deg);
+    }
+    25% {
+        transform: rotateZ(-15deg);
+    }
+    30% {
+        transform: rotateZ(10deg);
+    }
+    35% {
+        transform: rotateZ(-10deg);
+    }
+    40% {
+        transform: rotateZ(6deg);
+    }
+    45% {
+        transform: rotateZ(-4deg);
+    }
+    50% {
+        transform: rotateZ(2deg);
+    }
+    100% {
+        transform: rotateZ(none);
+    }
+}

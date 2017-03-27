@@ -1,0 +1,22 @@
+.c-anirhombus {
+    background: $color-rhombus-background;
+}
+
+.c-anirhombus__rhombus {
+    transition-property: all;
+    transition-duration: 0.75s;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(.77, -0.7, .24, 1.64);
+    background: $color-plain-white;
+    border-radius: 2px;
+    color: $color-dark-grey;
+    font-size: 24px;
+    font: Helvetica, Arial, Sans-serif;
+    height: 6em;
+    width: 6em;
+    transform: rotateZ(45deg);
+    &:hover {
+        border-radius: 50%;
+        transform: scale(2);
+    }
+}

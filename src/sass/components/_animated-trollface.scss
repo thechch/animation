@@ -1,0 +1,39 @@
+.c-anitrollface {
+    background: $color-plain-white;
+}
+
+.c-anitrollface__face {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .c-face__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 3em;
+        &:first-child {
+            transform: translateY(-5em);
+            transition: all 1s ease-out 0.4s;
+        }
+        &:last-child {
+            transform: translateY(5em);
+            transition: all 1s ease-out 1s;
+        }
+    }
+    .c-face__pic {
+        background: $color-plain-white url(../img/trollface.png) no-repeat;
+        background-size: contain;
+        background-position: 0 14em;
+        width: 20em;
+        height: 20em;
+        transform: scaleX(-1);
+        transition: background 1s cubic-bezier(0.68, 1, 0.265, 1);
+    }
+    &:hover {
+        .c-face__title:first-child, .c-face__title:last-child {
+            transform: none;
+        }
+        .c-face__pic {
+            background-position: 0 0;
+        }
+    }
+}
