@@ -1,4 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Cormorant+Garamond);
 
-@import './objects/_keyframes.scss';
-@import './components/_screen.scss';
+@import './settings/global';
+@import './settings/colors';
+
+@import './tools/mixins';
+
+@import './generics/box-sizing';
+@import './generics/reset';
+@import './generics/shared';
+
+@import './elements/page';
+
+@import './objects/keyframes';
+@import './components/screen';
