@@ -29,8 +29,16 @@
     text-transform: uppercase;
     letter-spacing: 0.4em;
     text-align: center;
-    &span {
+    animation: c-starwars--move-text 10s linear infinite;
+    span {
         display: inline-block;
+        animation: c-starwars--spin-letters 10s linear infinite;
+    }
+    @include small-cellphone {
+        font-size: 7px;
+    }
+    @include cellphone {
+        font-size: 10px;
     }
 }
 
@@ -67,5 +75,34 @@
     100% {
         opacity: 0;
         transform: translateZ(-1000em);
+    }
+}
+
+@keyframes c-starwars--spin-letters {
+    0%,
+    10% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+    30% {
+        opacity: 1;
+    }
+    70%,
+    86% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+    95%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes c-starwars--move-text {
+    0% {
+        transform: translateZ(5em);
+    }
+    100% {
+        transform: translateZ(0);
     }
 }
