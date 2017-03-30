@@ -2,6 +2,10 @@
       animation: c-anibackground--change 6s linear infinite alternate;
 }
 
+.c-anibackground__text {
+    color: $color-plain-white;
+    font-size: 4em;
+}
 @keyframes c-anibackground--change {
     0% {
         background: $color-animation-green;

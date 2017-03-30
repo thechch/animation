@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('styles', function() {
-  gulp.src('./src/sass/main.scss')
+  gulp.src('./src/css/sass/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('build/css'))
@@ -29,10 +29,15 @@ gulp.task('styles', function() {
     //.pipe(cssshrink())
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.reload({stream:true}));
+  gulp.src('./src/css/vendor/*.css')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest('build/css'))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['./src/js/**/*.js'])
+  gulp.src(['./src/js/*.js'])
     //.pipe(jshint('.jshintrc'))
     //.pipe(jshint.reporter('default'))
     .pipe(plumber())
@@ -40,6 +45,9 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('build/js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
+    .pipe(gulp.dest('build/js'))
+    .pipe(browserSync.reload({stream:true}));
+  gulp.src(['./src/js/vendor/*.min.js'])
     .pipe(gulp.dest('build/js'))
     .pipe(browserSync.reload({stream:true}));
 });
@@ -82,7 +90,7 @@ gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['html', browserSync.reload]);
   gulp.watch("build/*.html").on('change', browserSync.reload);
   // Watch .sass files
-  gulp.watch('src/sass/**/*.scss', ['styles', browserSync.reload]);
+  gulp.watch('src/css/sass/**/*.scss', ['styles', browserSync.reload]);
   // Watch .js files
   gulp.watch('src/js/*.js', ['scripts', browserSync.reload]);
   // Watch image files
